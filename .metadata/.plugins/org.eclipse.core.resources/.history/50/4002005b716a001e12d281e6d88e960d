@@ -1,0 +1,13 @@
+package com.lulu02_SportsProductShop.SportsProductShop;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SportsProductShopApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SportsProductShopApplication.class, args);
+	}
+
+}

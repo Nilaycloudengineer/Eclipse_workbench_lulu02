@@ -1,0 +1,18 @@
+package com.Lulu02.ReturnProducts.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.Lulu02.ReturnProducts.Repo.DamagedProductsRepository;
+
+@RestController
+@RequestMapping("/api/damaged-products")
+public class DamagedProductsController {
+	private final DamagedProductsRepository damagedProductsRepository;
+
+	public DamagedProductsController(DamagedProductsRepository damagedProductsRepository) {
+		this.damagedProductsRepository = damagedProductsRepository;
+	}
+
+	// Implement your CRUD operations here (GET, POST, PUT, DELETE).
+}

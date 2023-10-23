@@ -1,0 +1,85 @@
+package com.lulu02_MS1_Promotions.Entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "promotion")
+public class Promotion {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	Long id;
+
+	String Month;
+	double cost;
+	Long DurationDay;
+	String MediaPartner;
+
+//	public Long getId() {
+//		return id;
+//	}
+//
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
+//
+//	public String getMonth() {
+//		return Month;
+//	}
+//
+//	public void setMonth(String month) {
+//		Month = month;
+//	}
+//
+//	public double getCost() {
+//		return cost;
+//	}
+//
+//	public void setCost(double cost) {
+//		this.cost = cost;
+//	}
+//
+//	public Long getDurationDay() {
+//		return DurationDay;
+//	}
+//
+//	public void setDurationDay(Long durationDay) {
+//		DurationDay = durationDay;
+//	}
+//
+//	public String getMediaPartner() {
+//		return MediaPartner;
+//	}
+//
+//	public void setMediaPartner(String mediaPartner) {
+//		MediaPartner = mediaPartner;
+//	}
+//
+//	public Promotion(Long id, String month, double cost, Long durationDay, String mediaPartner) {
+//		super();
+//		this.id = id;
+//		Month = month;
+//		this.cost = cost;
+//		DurationDay = durationDay;
+//		MediaPartner = mediaPartner;
+//	}
+//
+//	public Promotion() {
+//		super();
+//		// TODO Auto-generated constructor stub
+//	}
+//
+//	@Override
+//	public String toString() {
+//		return "Promotion [id=" + id + ", Month=" + Month + ", cost=" + cost + ", DurationDay=" + DurationDay
+//				+ ", MediaPartner=" + MediaPartner + "]";
+//	}
+//
+//	// Getters and setters
+//	// Constructors
+//	// Other methods as needed
+}

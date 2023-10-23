@@ -1,0 +1,34 @@
+package com.lulu02_MS1_Promotions.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/promotions")
+public class PromotionController {
+
+    @Autowired
+    private PromotionRepository promotionRepository;
+
+    @GetMapping
+    public List<Promotion> getAllPromotions() {
+        return promotionRepository.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Promotion getPromotionById(@PathVariable Long id) {
+        return promotionRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Promotion not found with id: " + id));
+    }
+
+    @PostMapping
+    public Promotion createPromotion(@RequestBody Promotion promotion) {
+        return promotionRepository.save(promotion);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deletePromotion(@PathVariable Long id) {
+        promotionRepository.deleteById(id);
+    }
+}

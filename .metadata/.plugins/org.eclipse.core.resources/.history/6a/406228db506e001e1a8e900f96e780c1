@@ -1,0 +1,45 @@
+package com.demo.Lulu02_MiniProject.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.demo.Lulu02_MiniProject.entity.Clothes;
+import com.demo.Lulu02_MiniProject.repo.ClothesRepository;
+
+@RequestMapping("/pps")
+@RestController // We use it to create REST API end point along with http methods like
+				// GET,POST,DELETE,PUT,PATCH
+// Postman
+public class ClothesController {
+	@Autowired
+	ClothesRepository clothesRepository;
+
+	@GetMapping("/getClothes")
+	public List<Clothes> getJPQL() {
+
+		return ClothesRepository.findAll(); // select * from <TableName>;
+
+	}
+
+	@PostMapping("/addClothes")
+	public Clothes createuser(@RequestBody Clothes prod) {
+		return ClothesRepository.save(prod);
+	}
+
+	// Service layer to be added
+
+	/// Delete Operations @PathVariable..
+	@DeleteMapping("/deleteClothes/{id}")
+	public void deleteClothes(@PathVariable("id") Integer id) {
+		ClothesRepository.deleteById(id); // select * from <TableName>;
+	}
+
+}

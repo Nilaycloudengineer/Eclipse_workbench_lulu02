@@ -1,0 +1,23 @@
+import org.springframework.web.bind.annotation.GetMapping;
+
+import org.springframework.web.bind.annotation.RestController;
+
+ 
+
+@RestController
+
+public class fallbackController {
+
+	//Backup plan if our product server is down
+
+	@GetMapping("/productServiceCallback")
+
+	public String callback() {
+
+		return "Try again after some time";
+
+	}
+
+ 
+
+}

@@ -1,0 +1,28 @@
+package com.lululemon03.loops;
+import java.util.Scanner;
+
+public class VehicleLoanEligibility {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the applicant's salary
+        System.out.print("Enter the applicant's salary (in thousands): ");
+        double salary = scanner.nextDouble();
+
+        // Check if the salary is greater than or equal to 42,000 (in thousands)
+        double eligibilitySalary = 42.0; // The eligibility threshold
+        if (salary >= eligibilitySalary) {
+            System.out.println("The applicant is eligible to apply for a vehicle loan.");
+        } else {
+            System.out.println("Sorry, the applicant is not eligible for a vehicle loan.");
+        }
+
+        // Close the scanner
+        scanner.close();
+
+	}
+
+}

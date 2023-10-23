@@ -1,0 +1,75 @@
+package com.lulu.lulu02_MS1_Employee.controller;
+
+import java.util.List;
+
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+import org.springframework.web.bind.annotation.PathVariable;
+
+import org.springframework.web.bind.annotation.PostMapping;
+
+import org.springframework.web.bind.annotation.RequestBody;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.lulu.Lulu02_MS1_Employee.entity.Employee;
+
+import com.lulu.Lulu02_MS1_Employee.repository.EmployeeRepository;
+
+ 
+
+@RequestMapping("/emp")
+
+@RestController
+
+public class EmployeeController {
+
+	@Autowired
+
+	EmployeeRepository empRepo;
+
+	
+
+	@GetMapping("/getEmp")
+
+	public List<Employee> getEmployee(){
+
+		return empRepo.findAll();
+
+		}
+
+	
+
+	@PostMapping("/addEmp")
+
+	public Employee createuser(@RequestBody Employee care) {
+
+		return empRepo.save(care);
+
+	}
+
+	
+
+	@DeleteMapping("/deleteEmp/{id}")
+
+	public void deleteEmployee(@PathVariable("id") Integer id  ) {
+
+		empRepo.deleteById(id);
+
+	}
+
+	
+
+ 
+
+}
+
+ 

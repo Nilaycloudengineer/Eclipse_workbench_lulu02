@@ -1,0 +1,23 @@
+import java.util.Date;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+@Entity
+public class Purchase {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	private String product;
+	private double cost;
+	private Date dateOfPurchase;
+	private Date deliveryDate;
+	private String customerFeedback;
+
+	// Getters and setters
+
+	// Constructors
+}

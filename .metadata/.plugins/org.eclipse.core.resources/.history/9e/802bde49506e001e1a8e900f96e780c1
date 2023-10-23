@@ -1,0 +1,54 @@
+package com.demo.Lulu02_MiniProject.entity;
+
+import jakarta.persistence.Id;
+
+public class Clothes {
+	
+	
+	@Id //Primary Key
+	int id;
+	String name;
+	float cost;
+	String feedback;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public float getCost() {
+		return cost;
+	}
+	public void setCost(float cost) {
+		this.cost = cost;
+	}
+	public String getFeedback() {
+		return feedback;
+	}
+	public void setFeedback(String feedback) {
+		this.feedback = feedback;
+	}
+	public Clothes(int id, String name, float cost, String feedback) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.cost = cost;
+		this.feedback = feedback;
+	}
+	public Clothes() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "Clothes [id=" + id + ", name=" + name + ", cost=" + cost + ", feedback=" + feedback + "]";
+	}
+	
+
+}

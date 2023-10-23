@@ -1,0 +1,10 @@
+package com.lululemon03.loops;
+
+public class ForLoopBasics {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.lulu.lulu02_MS1_Employee;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Lulu02Ms1EmployeeApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Lulu02Ms1EmployeeApplication.class, args);
+	}
+
+}

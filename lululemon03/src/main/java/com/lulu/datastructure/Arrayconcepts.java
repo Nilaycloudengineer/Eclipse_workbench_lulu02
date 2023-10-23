@@ -1,0 +1,57 @@
+package com.lulu.datastructure;
+
+public class Arrayconcepts {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        
+		//Array Declared
+		int data[] = new int [5];
+		
+		//Initialize
+		
+		data[0]=11;
+		data[1]=22;
+		data[2]=33;
+		data[3]=44;
+		data[4]=55;
+		
+		//data[5]=66;
+		
+		//for
+		
+		//Processing
+		//add mul re
+		
+		System.out.println(data[0]);
+		System.out.println(data[1]);
+		System.out.println(data[2]);
+		System.out.println(data[3]);
+		System.out.println(data[4]);
+		
+		data[4]=data[3] + data[3];
+		System.out.println("upgraded result is ="+ data[4]);
+		
+		
+		//iterate over array ---
+		System.out.println("//////////");
+		for(int i=0 ; i< data.length ; i++) {
+			//display
+			//swap
+			//searching
+			//Manipulation
+			//max
+			//main
+			//delete
+			System.out.println("counetr value"+ i);
+			System.out.println(data[i]); //0 1 2 3 4
+		}
+		
+		//Enhance Loop
+		System.out.println("/////////");
+		for (int info : data) {
+			System.out.println(info);
+		}
+	}
+
+}

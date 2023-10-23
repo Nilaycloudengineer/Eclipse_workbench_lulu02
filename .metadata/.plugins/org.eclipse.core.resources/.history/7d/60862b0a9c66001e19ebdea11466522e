@@ -1,0 +1,66 @@
+package com.lulu.Lulu_02_Springboot.Entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table // (name="sportsproduct")
+public class Customercare {
+	@Id
+	int id;
+	String name;
+	float cost;
+	String descp;
+
+	public Customercare(int id, String name, float cost, String descp) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.cost = cost;
+		this.descp = descp;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public float getCost() {
+		return cost;
+	}
+
+	public void setCost(float cost) {
+		this.cost = cost;
+	}
+
+	public String getDescp() {
+		return descp;
+	}
+
+	public void setDescp(String descp) {
+		this.descp = descp;
+	}
+
+	@Override
+	public String toString() {
+		return "CustomerCare [id=" + id + ", name=" + name + ", cost=" + cost + ", descp=" + descp + "]";
+	}
+
+	public Customercare() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,10 @@
+package lulu02_MS1_Promotions.lulu02_MS1_Promotions.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import lulu02_MS1_Promotions.lulu02_MS1_Promotions.Entity.Promotion;
+
+@Repository
+public interface PromotionRepository extends JpaRepository<Promotion, Long> {
+}

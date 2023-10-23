@@ -1,0 +1,15 @@
+package com.demo.Lulu02_registry;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import com.netflix.discovery.AbstractDiscoveryClientOptionalArgs;
+@SpringBootApplication
+public class Lulu02RegistryApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Lulu02RegistryApplication.class, args);
+	}
+
+}

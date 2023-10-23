@@ -1,0 +1,78 @@
+package com.lulu.database.systematic;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class BusinessLogic {
+  
+	//CRUD Operations
+	
+		public void createData() throws SQLException {
+			Connection connection = ConnectDB.setupConnection();
+			String query ="INSERT INTO employee ( id, name, dept ) VALUES( ?, ?,?)";
+//			String query = "insert values into employee(? ,? ,?)  ";
+			PreparedStatement myStmt = connection.prepareStatement(query);
+			myStmt.setInt(1, 666);
+			myStmt.setString(2, "Nagasree");
+			myStmt.setString(3, "Management");
+
+			int success = myStmt.executeUpdate();
+			System.out.println("Added Successfully " + success);
+			
+		}
+
+	
+
+	public void readData() throws SQLException {
+		Connection connection=ConnectDB.setupConnection();
+		
+		 Statement statement;
+		 statement = connection.createStatement();
+         ResultSet resultSet;
+         resultSet = statement.executeQuery(
+             "select * from employee where id>=111");
+         int id;
+         String name;
+         String dept;
+         while (resultSet.next()) {
+             id = resultSet.getInt("id");
+             name = resultSet.getString("name");
+             dept=resultSet.getString("dept");
+             System.out.println("id : " + id
+                                + " name : " + name +"  departmet:"+ dept);
+         }
+         
+	
+	}
+	
+	void updateData() throws SQLException {
+
+
+		Connection connection = ConnectDB.setupConnection();
+		String query = "update employee set name= ? where id = ? ";
+		PreparedStatement myStmt = connection.prepareStatement(query);
+		myStmt.setString(1, "Shravya");
+		myStmt.setInt(2, 333);
+		boolean success = myStmt.execute();
+		System.out.println("Deleted Successfully " + success);
+
+ 
+
+	}
+	void deleteData() throws SQLException {
+		Connection connection = ConnectDB.setupConnection();
+		String query = "delete from employee where id = ? ";
+		PreparedStatement myStmt = connection.prepareStatement(query);
+		myStmt.setInt(1, 222);
+		boolean success = myStmt.execute();
+		System.out.println("Deleted Successfully " + success);
+
+ 
+
+	}
+
+}
+

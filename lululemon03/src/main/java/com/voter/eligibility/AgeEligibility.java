@@ -1,0 +1,15 @@
+package com.voter.eligibility;
+import java.util.*;
+public class AgeEligibility {
+	//int age=25;
+	
+Scanner sc = new Scanner(System.in);
+int age = sc.nextInt();
+void CheckAge()
+{
+	if(age>=18)
+		System.out.println("Eligible");
+	else
+		System.out.println("not eligible");
+}
+}

@@ -1,0 +1,22 @@
+package com.lulu02_MS1_Promotions.Entity;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Promotion {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    private String month;
+    private double cost;
+    private int durationDays;
+    private String mediaPartner;
+
+    // Getters and setters
+    // Constructors
+    // Other methods as needed
+}

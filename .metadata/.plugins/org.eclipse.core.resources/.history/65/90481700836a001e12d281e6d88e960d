@@ -1,0 +1,10 @@
+package com.lulu02.SportsProductShop;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.lulu02.SportsProductShop.entity.Purchase;
+
+@Repository
+public interface PurchaseRepository extends JpaRepository<Purchase, Long> {
+}

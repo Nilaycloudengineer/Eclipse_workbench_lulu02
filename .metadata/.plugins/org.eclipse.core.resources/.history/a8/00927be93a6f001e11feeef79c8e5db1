@@ -1,0 +1,10 @@
+@Entity
+public class DamagedProducts {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String productName;
+    private String reasonToReturn;
+    private String customerName;
+    // getters and setters
+}

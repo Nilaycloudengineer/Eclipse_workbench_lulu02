@@ -1,0 +1,31 @@
+package com.lulu.Lulu_02_Springboot_Controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController // we use it create REST API end Point along with http Methods
+
+// Like GET ,POST,DELETE,PUT ,PATCH
+
+//POSTMAN
+
+public class MyController {
+
+	@GetMapping("/hello")
+
+//	@RequestMapping(method = RequestMethod.GET)
+
+	public String hello() {
+
+		return "Hello World";
+
+	}
+
+//	Annotation for mapping HTTP GET requests onto specific handler methods.
+
+//	Specifically, @GetMapping is a composed annotation that acts as a shortcut for
+
+//	@RequestMapping(method = RequestMethod.GET).
+
+}

@@ -1,0 +1,28 @@
+package com.lulu02.lulu02_SportsProductShop.Entity;
+
+import java.util.Date;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "purchase")
+public class Purchase {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	Long id;
+
+	String product;
+	double cost;
+	Date dateofpurchase;
+	Date deliverydate;
+	String customerfeedback;
+
+	// Getters and setters
+
+	// Constructors
+}

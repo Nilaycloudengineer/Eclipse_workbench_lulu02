@@ -1,0 +1,18 @@
+package com.lulu.lulu_02_MS1_Customercare;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.aspectj.EnableSpringConfigured;
+
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@EnableSpringConfigured
+@EnableSwagger2
+@SpringBootApplication
+public class Lulu02Ms1CustomercareApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Lulu02Ms1CustomercareApplication.class, args);
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.lulu.Customercare.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.lulu.Lulu_02_Springboot.Entity.Customercare;
+
+//import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CustomercareRepo extends JpaRepository<Customercare, Integer> {
+
+}

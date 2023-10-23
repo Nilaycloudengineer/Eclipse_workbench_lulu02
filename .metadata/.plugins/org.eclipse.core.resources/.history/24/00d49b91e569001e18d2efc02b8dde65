@@ -1,0 +1,44 @@
+package lulu02_MS1_Promotions.lulu02_MS1_Promotions.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import jakarta.persistence.EntityNotFoundException;
+import lulu02_MS1_Promotions.lulu02_MS1_Promotions.Entity.Promotion;
+
+@RestController
+@RequestMapping("/api/your-entities")
+public class PromotionController {
+
+	@Autowired
+	private PromotionController PromotionRepository;
+
+	@GetMapping
+	public List<Promotion> getAllEntities() {
+		return PromotionRepository.findAll();
+	}
+
+	@GetMapping("/{id}")
+	public Promotion getEntityById(@PathVariable Long id) {
+		return PromotionRepository.findById(id)
+				.orElseThrow(() -> new EntityNotFoundException("Entity not found with id: " + id));
+	}
+
+	@PostMapping
+	public Promotion createEntity(@RequestBody Promotion entity) {
+		return PromotionRepository.save(entity);
+	}
+
+	@DeleteMapping("/{id}")
+	public void deleteEntity(@PathVariable Long id) {
+		PromotionRepository.deleteById(id);
+	}
+}

@@ -1,0 +1,12 @@
+package com.Lulu02.ReturnProducts.controller;
+@RestController
+@RequestMapping("/api/damaged-products")
+public class DamagedProductsController {
+    private final DamagedProductsRepository damagedProductsRepository;
+
+    public DamagedProductsController(DamagedProductsRepository damagedProductsRepository) {
+        this.damagedProductsRepository = damagedProductsRepository;
+    }
+
+    // Implement your CRUD operations here (GET, POST, PUT, DELETE).
+}

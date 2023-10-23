@@ -1,0 +1,34 @@
+package com.lulu.lulu_02_MS1_Customercare.Controller;
+@RestController
+
+public class CustomercareController {
+
+	// CRUD with Customer care
+
+	@Autowired
+
+	CustomercareRepo customercareRepository;
+
+	@GetMapping("/getCustomercare")
+	public List<Customercare> getCustomercare() {
+
+		return customercareRepository.findAll(); // select * from <TableName>;
+
+	}
+
+	@PostMapping("/addCustomercare")
+
+	public Customercare createuser(@RequestBody Customercare care) {
+
+		return customercareRepository.save(care);
+
+	}
+
+	@DeleteMapping("/deleteCustomercare/{id}")
+
+	public void deleteCustomercare(@PathVariable("id") Integer id) {
+
+		customercareRepository.deleteById(id); // select * from <TableName>
+	}
+
+}

@@ -1,0 +1,3 @@
+package com.Lulu02.ReturnProducts.Repo;
+public interface DamagedProductsRepository extends JpaRepository<DamagedProducts, Long> {
+}

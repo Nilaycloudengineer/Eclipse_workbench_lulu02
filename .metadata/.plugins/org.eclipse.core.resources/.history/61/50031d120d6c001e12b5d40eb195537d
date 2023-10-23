@@ -1,0 +1,9 @@
+package com.lulu.lulu02_MS1_Employee.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.lulu.lulu02_MS1_Employee.entity.Employee;
+
+public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
+
+}

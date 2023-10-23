@@ -1,0 +1,99 @@
+package com.demo.Lulu02_MiniProject.controller;
+
+@RestController
+
+@RequestMapping("/pps")
+
+public class Controller {
+
+	// we use it create REST API end Point along with http Methods
+
+	// Like GET ,POST,DELETE,PUT ,PATCH
+
+	// POSTMAN
+
+	@Autowired
+
+	ClothesRepository clothRepository;
+
+	@GetMapping("/getProduct")
+
+	public List<Clothes> getJPQL() {
+
+		return clothRepository.findAll(); // select * from <TableName>;
+
+	}
+
+	@PostMapping("/addProduct")
+
+	public Clothes createuser(@RequestBody Clothes prod) {
+
+		return clothRepository.save(prod);
+
+	}
+
+	@DeleteMapping("/delProduct/{id}")
+
+	public void delProduct(@PathVariable("id") Integer id) {
+
+		clothRepository.deleteById(id);
+
+	}
+
+	@PutMapping("/UpdateProduct/{id}")
+
+ 
+
+		public ResponseEntity<Object> updateShipping(@RequestBody Clothes clothes, @PathVariable long id) {
+
+ 
+
+	
+
+ 
+
+	Optional<Clothes> clothesOptional = clothRepository.findById((int) id);
+
+ 
+
+	
+
+ 
+
+		if (clothesOptional.isEmpty())
+
+ 
+
+		return ResponseEntity.notFound().build();
+
+ 
+
+	
+
+ 
+
+		clothes.setId(id);
+
+ 
+
+		
+
+ 
+
+		clothRepository.save(clothes);
+
+ 
+
+	
+
+ 
+
+		return ResponseEntity.noContent().build();
+
+ 
+
+		
+
+	
+
+}

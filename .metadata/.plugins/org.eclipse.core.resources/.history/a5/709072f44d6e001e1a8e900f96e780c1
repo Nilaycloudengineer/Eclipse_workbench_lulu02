@@ -1,0 +1,17 @@
+package com.demo.Lulu02_MiniProject.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.demo.Lulu02_MiniProject.entity.Clothes;
+
+
+public interface ProductRepository extends JpaRepository<Clothes, Integer> {
+	// @Query("SELECT s FROM SportsProducts s ")
+	// List<SportsProducts> findAllMyQuery();
+	@Query(value = "SELECT * FROM sports_products", nativeQuery = true) /// Native Query
+	List<Clothes> findAllNativeQuery();
+
+}
